@@ -1,0 +1,14 @@
+# Django backend dependencies
+Django>=4.2,<5
+djangorestframework>=3.14
+djangorestframework-simplejwt>=5.2
+django-cors-headers>=3.14
+psycopg2-binary>=2.9
+python-dotenv>=1.0
+
+# Optional / recommended
+gunicorn>=20.1            # WSGI server for production
+whitenoise>=6.4           # serve static files in production
+django-extensions>=3.2    # helpful dev utilities
+django-filter>=23.2       # filtering for DRF
+argon2-cffi>=21.3.0       # optional secure password hasher

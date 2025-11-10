@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: myproject
+      POSTGRES_USER: myprojectuser
+      POSTGRES_PASSWORD: changeme
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+  web:
+    build: .
+    working_dir: /code/myproject
+    command: bash -lc "python manage.py migrate --noinput && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgres://myprojectuser:changeme@db:5432/myproject
+      - PYTHONPATH=/code
+    depends_on:
+      - db
+volumes:
+  dbdata:

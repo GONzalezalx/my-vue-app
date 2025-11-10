@@ -1,0 +1,372 @@
+/* --- MOVED FROM informacionJugador.vue: global table/input rules --- */
+/* Apply globally so subcomponents share the same appearance */
+.info-table th {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.info-table td {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Consistent box for editable cells and date inputs */
+.editable-cell, .date-input, .read-only {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 8px;
+  height: 38px;
+  line-height: 18px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  text-align: center;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Read-only style kept visually consistent */
+.read-only { background: transparent; }
+
+/* user icon alignment */
+.user-icon { font-size: 1.3rem; display:block; margin:0 auto; }
+
+/* Button styles (unified) */
+.action-btn, .add-row-btn, .remove-row-btn, .add-btn {
+  background-color: #6B6E8D;
+  color: #CED0E4;
+  border: none;
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.action-btn:hover, .add-row-btn:hover, .remove-row-btn:hover { background-color: #bfbfdc; color: #333; }
+
+/* Top actions area: prev/next centered, add aligned right */
+.table-top-actions { display:flex; align-items:center; gap:0.6rem; width:100%; }
+.table-top-actions .arrow-btn-container { flex: 1 1 auto; display:flex; justify-content:center; gap:0.5rem; }
+.table-top-actions .arrow-btn { padding: 0.28rem 0.6rem; font-size: 0.82rem; border-radius: 6px; }
+.table-top-actions .add-btn, .table-top-actions .action-btn { margin-left: auto; padding: 0.32rem 0.7rem; font-size: 0.9rem; }
+
+.actions-col { width: 90px; }
+
+/* Adjust remove button placement inside row */
+.remove-row-btn { display: inline-block; margin: 0.2rem 0; }
+
+@media (max-width: 991px) {
+  .info-table th { font-size: 0.95rem; }
+  .info-table td { font-size: 0.85rem; }
+  .editable-cell, .date-input, .read-only { height: 34px; line-height: 16px; }
+}
+@media (max-width: 725px) {
+  .info-table th { font-size: 0.85rem; }
+  .info-table td { font-size: 0.75rem; }
+  .editable-cell, .date-input, .read-only { height: 30px; line-height: 14px; }
+}
+/* --- END MOVED RULES --- */
+
+/* --- STYLES MOVED FROM informacionPersonal.vue (global) --- */
+/* Contenedor principal */
+#cabeza {
+  padding: 18px;
+  background-color: #6B6E8D;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 16px;
+}
+
+#cuerpo {
+  background-color: #CED0E4;
+  padding: 18px;
+  margin-top: 12px;
+  border-radius: 12px;
+}
+
+/* Botones de sección */
+.general-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.btn-general {
+  background: #cfd0e4;
+  color: #333;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 0.3rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.btn-general:hover { background: #bfc0d4; }
+
+/* Table: fixed layout and spacing */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background: transparent;
+  table-layout: fixed;
+}
+
+.info-table th, .info-table td {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  text-align: center;
+  vertical-align: middle;
+  color: #333;
+  overflow: hidden;
+}
+
+.info-table th {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2f2f2f;
+}
+
+.info-table td { font-size: 0.95rem; }
+
+.user-icon { display: block; margin: 0 auto; font-size: 1.3rem; }
+
+/* First column (user icon) narrow */
+.info-table td:first-child, .info-table th:first-child {
+  width: 48px;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+/* Inputs and textareas box */
+.editable-cell, .date-input, .read-only {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  height: 36px;
+  line-height: 18px;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 6px;
+  background-color: transparent;
+  color: #222;
+  resize: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.read-only { cursor: default; }
+.date-input { text-align: center; }
+.date-input::placeholder { color: rgba(51,51,51,0.35); }
+
+/* Arrow buttons */
+.arrow-btn-container { display: inline-flex; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+.arrow-btn { padding: 0.35rem 0.8rem; background-color: #6B6E8D; color: #CED0E4; border: none; border-radius: 6px; cursor: pointer; }
+.arrow-btn:hover { background-color: #bfbfdc; color: #333; }
+
+/* Compact nav buttons */
+.arrow-btn-container.compact { display: flex; width: 100%; justify-content: center; gap: 0.5rem; margin-top: 0; margin-bottom: 0.6rem; align-items: center; }
+.arrow-btn.compact { padding: 0.22rem 0.5rem; font-size: 0.85rem; background-color: #6B6E8D; color: #f0eff8; border: 1px solid rgba(0,0,0,0.08); border-radius: 6px; line-height: 1; min-width: 36px; height: 28px; display: inline-flex; align-items: center; justify-content: center; margin: 0; }
+
+/* Ajustes: centrar y compactar botones "Anterior"/"Siguiente" en .table-top-actions */
+.table-top-actions { display:flex; align-items:center; gap:0.6rem; width:100%; }
+.table-top-actions .arrow-btn-container {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.table-top-actions .arrow-btn {
+  padding: 0.28rem 0.6rem;
+  font-size: 0.82rem;
+  border-radius: 6px;
+}
+/* Mantener Add alineado a la derecha y con tamaño ligeramente mayor */
+.table-top-actions .add-btn, .table-top-actions .action-btn {
+  margin-left: auto;
+  padding: 0.32rem 0.7rem;
+  font-size: 0.9rem;
+}
+
+/* Ensure top add-action is aligned to the right over the actions column */
+.table-top-actions .add-action-wrap {
+  display: flex !important; /* override any previous hide */
+  width: 90px;              /* same width as .actions-col */
+  margin-left: auto;        /* push to the far right */
+  justify-content: center;  /* center the button inside the box */
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0;               /* no extra padding so center matches column */
+}
+@media (max-width: 725px) {
+  .table-top-actions .add-action-wrap { width: auto; margin-left: 0; display: flex !important; }
+  .table-top-actions .arrow-btn { padding: 0.2rem 0.45rem; font-size: 0.75rem; }
+}
+
+/* --- ACTION BUTTON SIZE UNIFORMITY --- */
+/* Ensure Add (top wrapper), Add in header and Remove row buttons share identical sizing */
+.remove-row-btn,
+.info-table th.actions-col .action-btn,
+.table-top-actions .add-action-wrap .arrow-btn,
+.table-top-actions .add-action-wrap .add-btn {
+  display: inline-block;
+  min-width: 86px;            /* match visual width of row delete buttons */
+  padding: 0.32rem 0.6rem;   /* vertical/horizontal padding */
+  font-size: 0.85rem;
+  line-height: 1;            /* keep compact */
+  border-radius: 7px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Keep hover consistent */
+.remove-row-btn:hover,
+.info-table th.actions-col .action-btn:hover,
+.table-top-actions .add-action-wrap .arrow-btn:hover {
+  background-color: #bfbfdc;
+  color: #333;
+}
+
+/* Small tweak to vertically align header button a bit lower */
+.info-table th.actions-col .action-btn { margin-top: 6px; }
+@media (max-width: 725px) {
+  .remove-row-btn,
+  .info-table th.actions-col .action-btn,
+  .table-top-actions .add-action-wrap .arrow-btn,
+  .table-top-actions .add-action-wrap .add-btn {
+    min-width: 64px;
+    padding: 0.22rem 0.45rem;
+    font-size: 0.78rem;
+  }
+}
+/* --- END ACTION BUTTON SIZE UNIFORMITY --- */
+
+/* --- ACTION BUTTON BORDER FIX --- */
+/* Ensure action buttons (Eliminar / Agregar) display a visible border on all sides to match inputs */
+.remove-row-btn,
+.info-table th.actions-col .action-btn,
+.table-top-actions .add-action-wrap .arrow-btn {
+  border: 1px solid rgba(0,0,0,0.08);
+  background-clip: padding-box; /* ensure rounded corners render with border */
+  box-shadow: none;
+  border-radius: 6px;
+}
+/* Slightly darker right edge for subtle depth (keeps visual parity) */
+.remove-row-btn::after,
+.info-table th.actions-col .action-btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  pointer-events: none;
+}
+/* Ensure positioned relatives where needed */
+.remove-row-btn, .info-table th.actions-col .action-btn { position: relative; }
+/* --- END ACTION BUTTON BORDER FIX --- */
+
+/* Fix: ensure action buttons show right edge border */
+.remove-row-btn,
+.info-table th.actions-col .action-btn,
+.table-top-actions .add-action-wrap .arrow-btn {
+  border-right: 1px solid rgba(0,0,0,0.08) !important;
+  box-shadow: inset 1px 0 0 rgba(255,255,255,0.03), inset -1px 0 0 rgba(0,0,0,0.08);
+}
+
+/* Ensure action cell allows button borders to show */
+.info-table td:last-child, .info-table th.actions-col { overflow: visible; }
+
+/* Stronger visible border and inner edge for action buttons */
+.remove-row-btn,
+.info-table th.actions-col .action-btn,
+.table-top-actions .add-action-wrap .arrow-btn {
+  border: 1px solid rgba(0,0,0,0.12) !important;
+  background-clip: padding-box !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), inset -1px 0 0 rgba(0,0,0,0.12);
+  background-color: #6B6E8D !important;
+}
+
+/* Slightly adjust radius to match inputs */
+.remove-row-btn, .info-table th.actions-col .action-btn { border-radius: 6px !important; }
+
+/* Responsive */
+@media (max-width: 991px) {
+  .info-table th { font-size: 0.95rem; }
+  .info-table td { font-size: 0.85rem; }
+  .editable-cell, .date-input, .read-only { height: 34px; padding: 5px 6px; }
+}
+@media (max-width: 725px) {
+  .info-table th { font-size: 0.82rem; }
+  .info-table td { font-size: 0.72rem; }
+  .editable-cell, .date-input, .read-only { height: 30px; padding: 4px 6px; }
+  .general-buttons { gap: 0.4rem; }
+  .arrow-btn-container.compact { gap: 0.3rem; }
+  .arrow-btn.compact { padding: 0.18rem 0.4rem; font-size: 0.72rem; height: 26px; min-width: 30px; }
+}
+
+/* Small title/button overrides */
+#cabeza h1.text-center.text-white { font-size: 1.35rem; margin-bottom: 0.35rem; }
+.general-buttons { margin-top: -6px; }
+.btn-general { padding: 0.14rem 0.6rem; font-size: 0.8rem; min-width: unset; width: auto; }
+@media (max-width: 725px) { #cabeza h1.text-center.text-white { font-size: 1.05rem; } .btn-general { padding: 0.12rem 0.5rem; font-size: 0.72rem; } }
+
+/* Mobile-only portrait overlay inside informacionPersonal (applies on small touch devices) */
+@media only screen and (max-width: 600px) and (orientation: portrait) and (pointer: coarse) {
+  .table-container::before {
+    content: "Por favor, gira tu dispositivo para ver mejor la información.";
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(107,110,141,0.98);
+    color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1rem; text-align: center; padding: 1rem; box-sizing: border-box;
+  }
+  .table-container * { filter: blur(3px); pointer-events: none; user-select: none; }
+}
+
+/* --- FIX: allow JS-driven auto-resize to work (no height override) --- */
+/* This block intentionally does NOT set `height` with !important so inline heights set by JS take effect */
+.editable-cell, .date-input, .read-only, textarea {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  overflow-y: hidden !important;
+  text-overflow: clip !important;
+  min-height: 36px !important; /* initial height but allow growth via inline style */
+  max-height: none !important;
+}
+@media (max-width: 991px) {
+  .editable-cell, .date-input, .read-only, textarea { min-height: 34px !important; }
+}
+@media (max-width: 725px) {
+  .editable-cell, .date-input, .read-only, textarea { min-height: 30px !important; }
+}
+/* --- END FIX --- */
+
+/* --- Responsive row / editable-cell adjustments for tighter layouts --- */
+/* Apply to all .info-table rows to keep same look across components */
+.info-table tbody tr td {
+  font-size: 0.95rem; /* base slightly smaller for denser rows */
+}
+
+/* Ensure editable cells match row font sizing and have compact padding */
+.editable-cell {
+  font-size: 0.95rem;
+  padding: 6px 8px;
+}
+
+/* Medium screens: compact slightly */
+@media (max-width: 991px) {
+  .info-table tbody tr td { font-size: 0.88rem; }
+  .editable-cell { font-size: 0.85rem; padding: 5px 6px; min-height: 32px; }
+}
+
+/* Small screens: make text smaller to avoid overflow */
+@media (max-width: 725px) {
+  .info-table tbody tr td { font-size: 0.78rem; }
+  .editable-cell { font-size: 0.75rem; padding: 4px 6px; min-height: 28px; }
+}
+
+/* --- end adjustments --- */
+
