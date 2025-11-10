@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node
@@ -21,8 +21,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         run: npm ci
-      - name: Install NSIS
-        run: sudo apt-get update && sudo apt-get install -y nsis
       - name: Build
         run: npm run electron:build -- --publish=never
       - name: Upload artifacts
