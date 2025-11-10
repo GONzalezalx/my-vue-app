@@ -24,7 +24,7 @@ jobs:
       - name: Install NSIS
         run: sudo apt-get update && sudo apt-get install -y nsis
       - name: Build
-        run: npm run electron:build
+        run: npm run electron:build -- --publish=never
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
